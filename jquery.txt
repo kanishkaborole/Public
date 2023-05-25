@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>JQuery Mobile</title>
+</head>
+
+<body>
+    <!-- index.html -->
+    <div dat-role="page" id="" home">
+        <div data-role="header">
+            <h1>Amrutvahini College Of Engineering</h1>
+            <h4>Approved by AICTE ,Permanently Affiliated to SPPU, Pune, <br>
+                4th Time NBA Accrediated, NAAC 'A+' Grade ISO 9001:2015 Certified <br>
+                'Best College Award' by SPPU,Pune
+            </h4>
+        </div>
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li><a href="#home" class="ul-btn-active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#dept">Department</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+        <!-- Contents -->
+            <div data-role="content">
+                <h3 style="color:blue">Welcome to Amrutvahini</h3>
+                <p  style="text-align: justify;"> Amrutvahini College of Engineering (AVCOE), Sangamner established in 1983 under the leadership of Hon. Late. Bhausaheb
+                    Thorat and progessing under the guidance of Hon. Shri. Balasaheb Thorat, Revenue Minister,Government of Maharashtra and
+                    Hon. Dr.Sudhir Tambe (MLC Nashik). It is spread over 15.6 acres of ample greenery, with three times accreditation by NBA,
+                    New Delhi, Graded 'A+' by NACC Government of India and International Academic Accreditation lSO 9001:2015 by TUV SUD. It
+                    boasts state of art IT centre with 100 mbps Wi-Fi Internet Facility. It has a huge library that accommodates 66,735 books,
+                    129 print journals and 275 e-journals. It provides 100% placement assistance to its students through value added courses,
+                    foreign langauges (Japanese , German) and Training. It is an Institute that has always worked for imparting excellence
+                     driven engineering education that builds the future of Engineers and Entrepreneurs.
+                </p>
+            </div>
+            <div data-role="content">
+                <h3 style="color:purple">Vision</h3>
+                <p>
+                    To create opportunities for rural students to become able engineers and technocrats through continual excellence in engineering education.
+                </p>
+            </div>
+            <div data-role="content">
+                <h3 style="color:plum">Mission</h3>
+                <p>Our mission is to create self disciplined, physically fit, mentally robust and morally strong engineers and technocrats with high degree of integrity and sense of purpose who are capable to meet challenges of ever advancing technology for the benefit of mankind and nature.
+                    We, the management, the faculty and staff, therefore promise to strive hard and commit ourselves to achieve this objective through a continuous process of learning and appreciation of needs of time.</p>
+            </div>
+        <!-- Content -->
+        <center>
+            <div data-role="=content"
+              <div class="row">
+                 <img src="1.jpg" alt="" height="250px" width="40%">
+                 <img src="2.jpg" alt="" height="250px" width="40%">
+            </div>
+          </div>
+       </center>
+        <!-- Footer -->
+
+        <div data-role="footer">
+            <h3>Quick Access</h3>
+            <center>
+                <a href="#home">Home</a><br>
+                <a href="#about">About</a><br>
+                <a href="#dept">Department</a><br>
+                <a href="#contact">Contact</a><br>
+                <h6>All the rights are reserved with avcoe.org @2022-23</h6>
+            </center>
+    
+    </div>        
+       
+</body>
+
+</html>

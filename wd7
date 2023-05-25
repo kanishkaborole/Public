@@ -1,0 +1,75 @@
+avcoe@avcoe-HP-ProDesk-400-G1-SFF:~$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("d2f6a027-5820-4d85-95ee-44ce9ad8fe01") }
+MongoDB server version: 4.4.1
+WARNING: shell and server versions do not match
+Server has startup warnings: 
+{"t":{"$date":"2023-05-18T11:06:30.187+05:30"},"s":"W",  "c":"CONTROL",  "id":20698,   "ctx":"main","msg":"***** SERVER RESTARTED *****","tags":["startupWarnings"]}
+{"t":{"$date":"2023-05-18T11:06:31.363+05:30"},"s":"I",  "c":"STORAGE",  "id":22297,   "ctx":"initandlisten","msg":"Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem","tags":["startupWarnings"]}
+{"t":{"$date":"2023-05-18T11:06:37.554+05:30"},"s":"W",  "c":"CONTROL",  "id":22120,   "ctx":"initandlisten","msg":"Access control is not enabled for the database. Read and write access to data and configuration is unrestricted","tags":["startupWarnings"]}
+{"t":{"$date":"2023-05-18T11:06:37.562+05:30"},"s":"W",  "c":"CONTROL",  "id":22138,   "ctx":"initandlisten","msg":"You are running this process as the root user, which is not recommended","tags":["startupWarnings"]}
+{"t":{"$date":"2023-05-18T11:06:37.562+05:30"},"s":"W",  "c":"CONTROL",  "id":22184,   "ctx":"initandlisten","msg":"Soft rlimits too low","attr":{"currentValue":1024,"recommendedMinimum":64000},"tags":["startupWarnings"]}
+> show dbs
+admin    0.000GB
+avcoe    0.000GB
+config   0.000GB
+local    0.000GB
+student  0.000GB
+test     0.000GB
+> use AVCOE
+switched to db AVCOE
+> db.createCollection('Te')
+{
+	"ok" : 0,
+	"errmsg" : "db already exists with different case already have: [avcoe] trying to create [AVCOE]",
+	"code" : 13297,
+	"codeName" : "DatabaseDifferCase"
+}
+> use avcoe
+switched to db avcoe
+> db.createCollection('Te')
+{ "ok" : 1 }
+> db.Te.insert({"Name":"Riya","Email":"ri2@gmail.com","City":"Nashik"})
+WriteResult({ "nInserted" : 1 })
+> db.Te.insert({"Name":"Ram","Email":"ram1@gmail.com","City":"Pune"})
+WriteResult({ "nInserted" : 1 })
+> db.Te.find();
+{ "_id" : ObjectId("6465c09e50f8514b73860f55"), "Name" : "Riya", "Email" : "ri2@gmail.com", "City" : "Nashik" }
+{ "_id" : ObjectId("6465c0de50f8514b73860f56"), "Name" : "Ram", "Email" : "ram1@gmail.com", "City" : "Pune" }
+> db.Te.update({Name:"Ram"},{$set:{City:"Mumbai"})
+... ^C
+
+> db.Te.update({Name:"Ram"},{$set:{City:"Mumbai"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Te.find();
+{ "_id" : ObjectId("6465c09e50f8514b73860f55"), "Name" : "Riya", "Email" : "ri2@gmail.com", "City" : "Nashik" }
+{ "_id" : ObjectId("6465c0de50f8514b73860f56"), "Name" : "Ram", "Email" : "ram1@gmail.com", "City" : "Mumbai" }
+> db.deleteOne({Name:"Ram"})
+2023-05-18T11:44:13.553+0530 E QUERY    [thread1] TypeError: db.deleteOne is not a function :
+@(shell):1:1
+> db.Te.deleteOne({Name:"Ram"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.Te.find();
+{ "_id" : ObjectId("6465c09e50f8514b73860f55"), "Name" : "Riya", "Email" : "ri2@gmail.com", "City" : "Nashik" }
+> db.Te.find();
+{ "_id" : ObjectId("6465c09e50f8514b73860f55"), "Name" : "Riya", "Email" : "ri2@gmail.com", "City" : "Nashik" }
+{ "_id" : ObjectId("6465c4c7263b5cb17eb481d2"), "Name" : "simran", "Email" : "si2@gmail.com", "City" : "pune" }
+> db.Te.find();
+{ "_id" : ObjectId("6465c09e50f8514b73860f55"), "Name" : "Riya", "Email" : "ri2@gmail.com", "City" : "Nashik" }
+{ "_id" : ObjectId("6465c4c7263b5cb17eb481d2"), "Name" : "simran", "Email" : "si2@gmail.com", "City" : "pune" }
+{ "_id" : ObjectId("6465c54b263b5cb17eb481d3"), "Name" : "siya", "Email" : "si2@gmail.com", "City" : "nanded" }
+> db.Te.find();
+{ "_id" : ObjectId("6465c09e50f8514b73860f55"), "Name" : "Riya", "Email" : "ri2@gmail.com", "City" : "Nashik" }
+{ "_id" : ObjectId("6465c4c7263b5cb17eb481d2"), "Name" : "simran", "Email" : "si2@gmail.com", "City" : "pune" }
+{ "_id" : ObjectId("6465c60d263b5cb17eb481d4"), "Name" : "siya", "Email" : "si2@gmail.com", "City" : "nanded" }
+> db.Te.find();
+{ "_id" : ObjectId("6465c09e50f8514b73860f55"), "Name" : "Riya", "Email" : "ri2@gmail.com", "City" : "Nashik" }
+{ "_id" : ObjectId("6465c4c7263b5cb17eb481d2"), "Name" : "simran", "Email" : "si2@gmail.com", "City" : "pune" }
+{ "_id" : ObjectId("6465c60d263b5cb17eb481d4"), "Name" : "siya", "Email" : "si2@gmail.com", "City" : "nanded" }
+> db.Te.find();
+{ "_id" : ObjectId("6465c09e50f8514b73860f55"), "Name" : "Riya", "Email" : "ri2@gmail.com", "City" : "Nashik" }
+{ "_id" : ObjectId("6465c60d263b5cb17eb481d4"), "Name" : "siya", "Email" : "si2@gmail.com", "City" : "nanded" }
+> 
+
+
